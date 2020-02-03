@@ -30,7 +30,27 @@ class CalcBrain: TwoOperandOperation {
     }
     
     func stringRepresentation() -> String {
-        return "\(self.a) \(self.type)\(self.b)"
+        var str = ""
+        
+        if let a = self.a {
+            str += "\(Int(a))"
+        }
+        
+        if let type = self.type {
+            str += "\(type.rawValue)"
+        }
+        
+        if let b = self.b {
+            str += "\(Int(b))"
+        }
+        
+        return str
+    }
+    
+   func clear() {
+       self.type = nil
+        self.a = nil
+        self.b = nil
     }
     
     

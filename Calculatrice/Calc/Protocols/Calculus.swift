@@ -8,8 +8,8 @@
 
 import Foundation
 
-enum OperatorType {
-    case plus, time, divide, minus
+enum OperatorType:String {
+    case plus = "+", time = "*", divide = "/", minus = "-"
 }
 
 protocol Calculus {

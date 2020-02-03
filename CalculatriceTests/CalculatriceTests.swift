@@ -56,6 +56,29 @@ class CalculatriceTests: XCTestCase {
         let res = brain.execute()
         XCTAssert(res == 100)
     }
+    
+    func testBrainDisplay() {
+        var brain = CalcBrain()
+        brain.addValue(x: 2)
+        brain.addValue(x: 2)
+        XCTAssert(brain.stringRepresentation() == "22")
+        brain.setOperator(type: .divide)
+        XCTAssert(brain.stringRepresentation() == "22/")
+        brain.addValue(x: 2)
+        XCTAssert(brain.stringRepresentation() == "22/2")
+        brain.addValue(x: 2)
+        XCTAssert(brain.stringRepresentation() == "22/22")
+        let res = brain.execute()
+        XCTAssert(res == 1.0)
+        
+//        XCTAssert(brain.a == 92)
+//        brain.setOperator(type: .plus)
+//        XCTAssert(brain.type == .plus)
+//        brain.addValue(x: 8)
+//        XCTAssert(brain.b == 8)
+//        let res = brain.execute()
+//        XCTAssert(res == 100)
+    }
 
     func testPerformanceExample() {
         // This is an example of a performance test case.
